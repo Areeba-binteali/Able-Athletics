@@ -1,0 +1,1139 @@
+@font-face {
+    font-family: 'oswald-light';
+    src: url('../fonts/Oswald-Light.woff2') format('woff2'),
+         url('../fonts/Oswald-Light.woff') format('woff');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'FjallaOne';
+    src: url('../fonts/FjallaOne-Regular.woff2') format('woff2'),
+         url('../fonts/FjallaOne-Regular.woff') format('woff');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Montserrat-semibold';
+    src: url('../fonts/Montserrat-Medium.woff2') format('woff2'),
+         url('../fonts/Montserrat-Medium.woff') format('woff');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Montserrat-regular';
+    src: url('../fonts/Montserrat-Regular.woff2') format('woff2'),
+         url('../fonts/Montserrat-Regular.woff') format('woff');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Elephant';
+    src: url('../fonts/Elephant-Regular.woff2') format('woff2'),
+    url('../fonts/Elephant-Regular.woff') format('woff');
+}
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat-regular';
+    font-weight: 400;
+}
+.container{
+    max-width: 1310px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+a{
+    color: #000;
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+
+
+
+/* header styling starts here */
+
+
+
+.topbar{
+    background-color: #000;
+    font-size: 14px;
+    font-family: 'Montserrat-semibold';
+    color: #fff;
+    text-align: center;
+    position: relative;
+    min-height: fit-content;
+    height: 40px;
+    padding: 0 60px;
+    transition: 0.5s;
+    overflow-y: hidden;
+    animation: topbar 3s ease-in-out infinite forwards;
+}
+.topbar p{
+    padding: 10px 0;
+}
+.topbar i{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+header{
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.header-container{
+    max-width: 1360px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.header-main{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+}
+
+.header-sub-divs.logo{
+    width: 20%;
+}
+
+.header-sub-divs.links{
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header-sub-divs.navigation{
+    width: 60%;
+}
+
+.header-sub-divs.navigation nav ul{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    align-items: center;
+    text-transform: capitalize;
+}
+
+.header-sub-divs.navigation nav ul li{
+    margin: 0 20px;
+    font-family: 'oswald-light';
+    font-size: 17px;
+    color: #000;
+    transition: 0.3s;
+    position: relative;
+}
+.header-sub-divs.navigation nav ul li::after,.header-sub-divs.navigation nav ul li::before{
+    content: '';
+    height: 1px;
+    display: block;
+    transition: 0.5s;
+    position: absolute;
+    bottom: -5px;
+    width: 0;
+    border-radius: 3px;
+    background-color: #00bfff;
+}
+.header-sub-divs.navigation nav ul li::before{
+    top: -3px;
+    right: 0;
+}
+.header-sub-divs.navigation nav ul li:hover::after, .header-sub-divs.navigation nav ul li:hover::before{
+    width: 100%;
+}
+.header-sub-divs.navigation nav ul li:hover{
+    color: #00bfff;
+}
+.header-sub-divs.logo img{
+    width: 77%;
+    height: auto;
+    object-fit: cover;
+}
+i.fa-solid.fa-bars-staggered{
+    display: none;
+    float: right;
+}
+
+.button{
+    background-color: #00bfff;
+    color: #fff;
+    font-family: 'FjallaOne';
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 14px 35px;
+    clip-path: polygon(8% 0, 100% 0%, 92% 100%, 0 100%);
+    transition: 0.5s;
+}
+.button:hover{
+    background-color: #026282;
+}
+.button i{
+    font-size: 14px;
+}
+.cart{
+    position: relative;
+}
+.header-sub-divs.links i.fa-cart-shopping{
+    font-size: 24px;
+    position: relative;
+    cursor: pointer;
+}
+.header-sub-divs.links .cart:hover::before{
+    content: '';
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-color: #00bfff;
+    clip-path: polygon(50% 39%, 0% 100%, 100% 100%);
+    position: absolute;
+    bottom: -18px;
+    left: 5px;
+}
+.header-sub-divs.links .cart:hover:after{
+    content: 'My Cart';
+    position: absolute;
+    bottom: -45px;
+    left: -30px;
+    font-size: 12px;
+    width: 60px;
+    background-color: #00bfff;
+    text-align: center;
+    color: #fff;
+    padding: 8px 15px;
+    clip-path: polygon(8% 0, 100% 0%, 92% 100%, 0 100%);
+}
+.header-sub-divs.links i.fa-cart-shopping::after{
+    content: '0';
+    font-size: 12px;
+    color: #fff;
+    background-color: #00bfff;
+    border-radius: 100%;
+    padding: 3px 6px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+}
+
+.mobile-menu{
+    position: fixed;
+    background-color: #00bfff;
+    z-index: 999;
+    width: 90%;
+    margin: 10px 5%;
+    color: #fff;
+    font-family: 'oswald-light';
+    text-transform: capitalize;
+    overflow-y: hidden;
+    transition: all ease-in-out 0.5s;
+    max-height: fit-content;
+    height: 0;
+}
+.mobile-menu nav{
+    margin-top: 50px;
+}
+.mobile-menu a li{
+    color: #fff;
+    padding: 10px 0;
+    margin: 0 10px;
+    border-bottom: 1px solid #ffffff61;
+}
+.mobile-menu i{
+    float: right;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+}
+/* header styling ends here */
+
+/* banner styling starts here */
+
+.banner{
+    background-image: url('../images/bannerbg.png');
+    background-size: cover;
+    padding: 10% 0;
+    margin-bottom: 0;
+}
+.tagline{
+    color: #000;
+    font-family: 'FjallaOne';
+    font-size: 50px;
+    text-transform: uppercase;
+}
+.headline{
+        font-family: 'FjallaOne';
+        font-size: 130px;
+        font-weight: 400;
+        letter-spacing: 5px;
+        color: transparent;
+        -webkit-text-stroke: 2px #00bfff;
+} 
+.subline{
+    font-family: 'Montserrat-semibold';
+    text-transform: uppercase;
+    font-size: 22px;
+    margin-bottom: 40px;
+}
+.inclusion{
+    width: 100%;
+    margin-top: -40px;
+}
+.inclusion .tagline{
+    font-size: 36px;
+}
+.inclusion .headline{
+    font-size: 100px;
+    letter-spacing: 3px;
+    font-weight: 400;
+}
+.description{
+    font-family: 'Montserrat-regular';
+    font-size: 15px;
+    line-height: 26px;
+    width: 92%;
+}
+.awien{
+    color: transparent;
+}
+.inclusion .diff-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+    width: 100%;
+    position: relative;
+}
+.inclusion .diff-container .sub-container:nth-child(1){
+    width: 50%;
+}
+.diff-container .sub-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.inclusion .diff-container .sub-container:nth-child(2){
+    width: 50%;
+    background-image: url('../images/inclusion2.png');
+    padding: 7% 75px;
+    background-size: cover;
+    margin-top: -22px;
+}
+
+/* banner styling ends here */
+
+footer .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 4% 15px;
+    border-bottom: 1px solid #383838;
+}
+footer{
+    background-color: #000;
+    color: #fff;
+}
+.footer-icon{
+    color: #00bfff;
+    display: inline-block;
+    border: 1px solid #00bfff;
+    padding: 10px 15px;
+    font-size: 24px;
+    transition: 0.3s;
+    margin-top: 40px;
+}
+.footer-icon:hover{
+    background-color: #00bfff;
+    color: #fff;
+}
+.footer-icon:nth-child(3){
+    margin: 0 10px;
+}
+.footer-icon:nth-child(4){
+    margin: 0 10px 0 0;
+}
+footer a{
+    color: #fff;
+}
+.widgets{
+    width: 30%;
+}
+.widgets h3{
+    font-size: 25px;
+    line-height: 2.4em;
+    font-family: 'FjallaOne';
+    font-weight: 300;
+}
+.widgets p{
+    font-size: 15px;
+    line-height: 1.733em;
+    opacity: 0.702;
+    transition: 0.3s;
+}
+.widgets div p:hover{
+    opacity: 1;
+}
+
+.widgets div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: left;
+}
+.widgets div p{
+    width: 50%;
+}
+.ein{
+    text-align: center;
+    width: 100%;
+    padding: 30px 0;
+    color: #fff;
+    opacity: 0.702;
+}
+.ourImpact{
+    background-image: url('../images/athletics.png');
+    padding: 5% 0;
+    margin: 5px 0;
+    background-position: right center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-bottom: 270px;
+    position: relative;
+    z-index: 5;
+}
+.ourImpact .tagline{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.ourImpact .description{
+    text-align: center;
+    margin: 0 auto;
+    width: 70%;
+}
+.ourImpact .description span{
+    color: #00bfff;
+    font-style: italic;
+}
+.cards{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 60px 0;
+}
+.single-card{
+    background-color: #000;
+    color: #00bfff;
+    padding: 30px;
+    width: 22%;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+.single-card:hover{
+    background-color: #fff;
+    box-shadow: 0px 5px 30px 4px rgba(0,0,0, 0.2);
+}
+.single-card:hover .card-description{
+    color: #000;
+}
+.card-image{
+    width: 60px;
+    height: 60px;
+    transition: 0.3s;
+}
+.card-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s;
+}
+div.flex-div-card{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: center;
+}
+div.flex-div-card h5{
+    font-family: 'FjallaOne';
+    font-size: 60px;
+}
+.card-description{
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-family: 'Montserrat-semibold';
+}
+
+.weAreAble .able-styled-text{
+    color: transparent;
+    background-image: linear-gradient(to bottom, #00bfff 50%, white 50%);
+    background-clip: text;
+    -webkit-text-stroke: 2px transparent;
+    font-weight: 700;
+    letter-spacing: 15px;
+    font-family: 'FjallaOne';
+    font-size: 250px;
+
+  }
+.margined-text{
+    position: absolute;
+    top: -219px;
+    z-index: 99;
+}
+.weAreAble .able-styled-text::before{
+    content: 'ABLE';
+    color: transparent;
+    font-family: 'FjallaOne';
+    font-weight: 500;
+    background-image: linear-gradient(to bottom, #fff 50%, #000 50%);
+    background-clip: text;
+    position: absolute;
+    letter-spacing: 15px;
+}
+.weAreAble{
+    background-color: #000;
+    position: relative;
+    padding: 140px 0 100px;
+    margin-top: -20px;
+}
+.weAreAble .tagline{
+    margin-left: 20px;
+}
+
+.contentofpage{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00bfff;
+    color: #fff;
+    font-size: 36px;
+}
+.quote-font .right-span, .quote-font .left-span{
+    font-family: 'Elephant';
+    font-size: 150px;
+    color: #00bfff;
+}
+.quote-font{
+    color: #fff;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 22px;
+    font-family: 'Montserrat-semibold';
+    line-height: 36px;
+    font-style: italic;
+}
+.quote{
+    position: relative;
+}
+.quote .quote-font .left-span, .quote .quote-font .right-span{
+    position: absolute;
+    top: 15px;
+    left: 0;
+    font-style: normal;
+}
+.author-name{
+    display: block;
+    font-size: 18px;
+    font-style: normal;
+}
+.quote .quote-font .right-span{
+    text-align: right;
+    right: 0;
+    bottom: -15px;
+    left: unset;
+    top: unset;
+}
+.quote-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 30px;
+}
+.quote-section div{
+    width: 47%;
+}
+.quote-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.quote-image img{
+    width: 100%;
+}
+.upcomingEvents .container{
+    background-image: url('../images/change\ lives.png');
+    padding: 8% 15px 300px;
+    background-position: bottom center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.toolbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.blog-posts{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 40px 0;
+}
+.single-post{
+    width: 31%;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+.single-post img{
+    width: 100%;
+}
+.single-post p.button{
+    padding: 5px 20px;
+    width: fit-content;
+    text-align: center;
+    margin: 0 auto;
+    font-family: 'Montserrat-semibold';
+    font-size: 15px;
+    margin-top: 15px;
+}
+.single-post .quote-font{
+    color: #000;
+    width: 100%;
+    font-style: normal;
+    font-family: 'Montserrat-semibold';
+    margin: 15px 0;
+}
+.single-post .description{
+    font-size: 17px;
+    line-height: 26px;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+}
+.view-link{
+    text-align: center;
+    display: block;
+    margin: 20px 0;
+    width: 100%;
+    color: #00bfff;
+    font-size: 15px;
+    font-family: 'Montserrat-semibold';
+}
+.view-link i{
+    font-size: 12px;
+}
+.toolbar h3{
+    width: 50%;
+}
+.toolbar a{
+    width: fit-content;
+}
+.donation{
+    background-image: linear-gradient(105deg, #000 55%, #f3f8f9 45%);
+    padding: 80px 0;
+    margin-top: -20px;
+}
+.donation .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.donation .details, .donation .donate-form{
+    width: 47%;
+}
+.donation h5{
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Montserrat-semibold';
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 80%;
+}
+.donation .donation-heading{
+    color: #fff;
+    font-size: 70px;
+    font-family: 'FjallaOne';
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.donation .donation-heading span{
+    font-family: 'FjallaOne';
+    -webkit-text-stroke: 2px #00bfff;
+    letter-spacing: 5px;
+    color: transparent;
+}
+.donate-form form{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+}
+.donate-form form select, .donate-form form input{
+    border: none;
+    outline: none;
+}
+.donate-form .button{
+    padding: 20px 45px;
+    clip-path: polygon(12% 0, 100% 0%, 88% 100%, 0 100%);
+}
+.grey-div {
+    padding: 1px;
+    background-color: #ccc;
+    clip-path: polygon(8% 0%, 99% 0%, 94% 100%, 3% 100%);
+    width: 60%;
+}
+.donate-form .white-div {
+    width: 100%;
+    clip-path: polygon(8% 0%, 99% 0%, 94% 100%, 3% 100%);
+    padding: 20px 45px;
+    background-color: #fff;
+}
+.white-div select{
+    font-size: 18px;
+    width: 100%;
+    background-color: transparent;
+}
+.donate-form form::after{
+    content: "\f054";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: #fff;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.featured-partners{
+    text-align: center;
+    padding: 80px 0;
+}
+.partners-main{
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+.partners-main .partners-single:nth-child(3){
+    padding: 40px 50px;
+}
+.partners-single{
+    width: 22%;
+    background-color: #f3f8f9;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    transition: 0.3s;
+    align-items: center;
+}
+.partners-single:hover{
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0, 0.2);
+}
+.partners-single img{
+    width: 100%;
+    height: auto;
+}
+.another-quote{
+    padding: 80px 0 250px;
+    background-image: url('../images/next-quote_bg.png');
+    background-size: cover;
+    background-position: center;
+}
+.another-quote .quote-font{
+    color: #000;
+    margin: 0 auto;
+    margin-top: 80px;
+    position: relative;
+    width: 70%;
+    font-family: 'FjallaOne';
+    font-size: 30px;
+    line-height: 46px;
+}
+.another-quote .author-name{
+    font-weight: 600;
+}
+.another-quote .left-span{
+    position: absolute;
+    right: 45%;
+    transform: translateX(-55%);
+    font-style: normal;
+    margin-bottom: 30px;
+    top: -40px;
+}
+.subscribe{
+    padding: 80px 0;
+}
+.subscribe .tagline{
+    text-align: center;
+    background-image: url('../images/subscribe.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    line-height: 40px;
+    padding: 70px 0 0;
+    background-position: center;
+}
+.subscribe p{
+    text-align: center;
+    margin: 20px 0;
+    width: 100%;
+}
+.form-subscribe input{
+    width: 25%;
+    display: inline-block;
+    margin: 10px;
+    padding: 25px;
+    border: 1px solid #ccc;
+    transform: skewX(-10deg);
+    font-style: normal;
+}
+.form-subscribe input::placeholder{
+    transform: skewX(10deg);
+    font-size: 14px;
+}
+.form-subscribe input:nth-child(4){
+    width: 15%;
+    transform: skewX(0deg);
+    padding: 20px;
+    border: none;
+    clip-path: none;
+    transform: skewX(-10deg);
+}
+
+/* media queries */
+
+@media (max-width: 1255px) {
+    .header-sub-divs.navigation nav ul li{
+        margin: 0 10px;
+        font-size: 15px;
+    }   
+    .quote-font .left-span{
+        top: -5px !important;
+    }
+    .quote-font{
+        width: 85%;
+    }
+    .donate-form .button{
+        clip-path: polygon(8% 0, 100% 0%, 92% 100%, 0 100%);
+    }
+}
+@media (max-width: 992px) {
+    .header-sub-divs.navigation nav ul li{
+        font-size: 13px;
+        margin: 0 7px;
+    }
+    .header-sub-divs.links {
+        width: 15%;
+    }
+    a.button {
+        font-size: 14px;
+        padding: 10px 14px;
+    }
+    .header-sub-divs.navigation {
+        width: 65%;
+    }
+    .header-sub-divs.links i.fa-cart-shopping {
+        font-size: 20px;
+    }
+    .header-sub-divs.links i.fa-cart-shopping::after {
+        font-size: 10px;
+    }
+    .header-sub-divs.logo img {
+        width: 100%;
+    }
+    .button i{
+        font-size: 12px;
+    }
+    a.btn{
+        font-size: 18px;
+        padding: 12px 30px;
+    }
+    .banner h2{
+        font-size: 28px;
+    }
+    .banner h1{
+        font-size: 82px;
+        -webkit-text-stroke: 1px #00bfff;
+        letter-spacing: 2px;
+    }
+    .banner h3{
+        font-size: 16px;
+    }
+    .banner{
+        padding: 15% 0;
+        background-position: -110px;
+    }
+    .widgets{
+        width: 50%;
+    }
+    footer .container .widgets:nth-child(3){
+        margin-top: 30px;
+    }
+    .inclusion .diff-container .sub-container:nth-child(2) {
+        width: 100%;
+        padding: 12% 50px;
+    }
+    .inclusion .diff-container .sub-container:nth-child(1) {
+        width: 100%;
+        margin-top: -20px;
+    }
+    .diff-container {
+        flex-direction: column-reverse;
+    }
+    .single-card{
+        width: 47%;
+        margin-bottom: 25px;
+    }
+    .inclusion .headline{
+        font-size: 72px;
+    }
+    .inclusion .tagline{
+        font-size: 26px;
+    }
+    .ourImpact .tagline{
+        font-size: 46px;
+    }
+    .ourImpact{
+        padding-bottom: 200px;
+    }
+    .weAreAble .able-styled-text{
+        font-size: 200px;
+    }
+    .margined-text{
+        top: -188px;
+    }
+    .quote-section div{
+        width: 80%;
+        margin: 20px auto;
+    }
+    .quote-font .left-span{
+        top: 15px !important;
+    }
+    .weAreAble{
+        padding: 140px 0 60px;
+    }
+    .single-post{
+        width: 47%;
+        margin: 10px 0;
+    }
+    .upcomingEvents .container{
+        padding: 80px 0 150px;
+    }
+    .upcomingEvents{
+        padding: 0 15px;
+    }
+    .donation .details, .donation .donate-form{
+        width: 100%;
+        text-align: center;
+    }
+    .donation .details h5{
+        margin: 0 auto;
+        text-shadow: 0 0 10px rgba(0,0,0, 0.2);
+    }
+    .donation .donate-form form{
+    justify-content: center;
+    margin-top: 30px;
+    }
+    .donation .donate-form form::after{
+        right: 100px;
+    }
+    .donate-form .button {
+        clip-path: polygon(14% 0, 100% 0%, 86% 100%, 0 100%);
+    }
+    .partners-single{
+        width: 47%;
+        margin: 10px;
+    }
+    .another-quote .left-span{
+        top: -60px !important;
+        right: 40%;
+        transform: translateX(-40%);
+    }
+    .form-subscribe input{
+        width: 47%;
+    }
+    .form-subscribe input:nth-child(4){
+        width: 47%;
+    }
+}
+@media (max-width: 767px) {
+    .topbar p{
+        font-size: 12px;
+    }
+    .topbar{
+        padding: 0 25px;
+    }
+    .header-sub-divs.navigation nav{
+        display: none;
+    }
+    .header-sub-divs.navigation{
+        width: 25%;
+    }
+    .header-sub-divs.links{
+        width: 35%;
+    }
+    i.fa-solid.fa-bars-staggered{
+        display: block;
+    }
+    .header-sub-divs.logo{
+        width: 40%;
+    }
+    .button i{
+        font-size: 11px;
+    }
+    .header-sub-divs.links i.fa-cart-shopping {
+        font-size: 16px;
+    }
+    .banner{
+        padding: 20% 0;
+        background-position: unset;
+    }
+    .widgets{
+        width: 100%;
+    }
+    footer .container .widgets:nth-child(2){
+        margin-top: 30px;
+    }
+    .inclusion .diff-container .sub-container:nth-child(2) {
+        width: 100%;
+        padding: 30% 30px 20%;
+        margin-top: 0px;
+    }
+    .inclusion .tagline{
+        font-size: 24px;
+    }
+    .inclusion .headline{
+        font-size: 65px;
+        letter-spacing: 3px;
+    }
+    .description{
+        width: 100%;
+    }
+    .single-card{
+        width: 100%;
+    }
+    .ourImpact{
+        padding-bottom: 120px;
+    }
+    .weAreAble .tagline{
+        font-size: 36px;
+        margin-left: 0;
+    }
+    .weAreAble .able-styled-text{
+        font-size: 140px;
+        letter-spacing: 10px;
+    }
+    .weAreAble .able-styled-text::before{
+        letter-spacing: 10px;
+    }
+    .margined-text{
+        top: -133px;
+    }
+    .quote-section div{
+        width: 100%;
+        margin: 0 auto 20px;
+    }
+    .quote-font .right-span, .quote-font .left-span{
+        font-size: 100px;
+    }
+    .quote-font .left-span{
+        top: -10px !important;
+    }
+    .quote-font{
+        font-size: 18px;
+        line-height: 30px;
+    }
+    .weAreAble{
+        padding: 120px 0 60px;
+    }
+    .single-post{
+        width: 100%;
+    }
+    .toolbar h3{
+        font-size: 46px;
+    }
+    .upcomingEvents .container{
+        padding-bottom: 50px;
+    }
+    .donation .donate-form form::after{
+        right: 30px;
+    }
+    .donate-form .button{
+        clip-path: polygon(8% 0, 100% 0%, 92% 100%, 0 100%);
+    }
+    .donation .details h2{
+        text-shadow: 0 0 10px rgba(0,0,0, 0.2);
+        font-size: 58px;
+    }
+    .donation .details h2 span{
+        text-shadow: none;
+    }
+    .donation{
+        margin-top: -5px;
+    }
+    .donate-form .white-div{
+        padding: 20px;
+    }
+    .partners-single{
+        width: 100%;
+    }
+    .another-quote .quote-font{
+        font-size: 18px;
+        line-height: 30px;
+    }
+    .another-quote .left-span{
+        top: -40px !important;
+    }
+    .another-quote .author-name{
+        font-size: 16px;
+    }
+    .form-subscribe input{
+        width: 97%;
+    }
+    .form-subscribe input:nth-child(4){
+        width: 50%;
+    }
+}
+
+
+/* animations */
+
+
+@keyframes topbar {
+    0%{
+        background-color: #000;
+    }
+    25%{
+        background-color: #002937;
+    }
+    50%{
+        background-color: #00bfff;
+    }
+    75%{
+        background-color: #00bfff;
+    }
+    100%{
+        background-color: #002937;
+    }
+}
+
+  
